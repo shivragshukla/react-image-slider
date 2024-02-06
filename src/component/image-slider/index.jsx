@@ -34,7 +34,7 @@ export default function ImageSlider({url, page = 1, limit = 5}) {
 	}
 
 	function handleNextSlider() {
-		setCurrentSlider(currentSlider === images.length ? 0 : currentSlider + 1);
+		setCurrentSlider(currentSlider === images.length -1 ? 0 : currentSlider + 1);
 	}
 
 
@@ -62,6 +62,13 @@ export default function ImageSlider({url, page = 1, limit = 5}) {
 					)
 				}
 				<BsChevronRight onClick={() => handleNextSlider()} className="arrow arrow-right"/>
+				<div className="indicator-group">
+				{
+					images.map((_,i) => 
+						<button onClick={() => setCurrentSlider(i)} className={i === currentSlider ? 'active' : ''}></button>
+					)
+				}
+				</div>
 			</div>
 		</div>
 	);

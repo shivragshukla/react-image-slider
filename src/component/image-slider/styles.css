@@ -40,3 +40,20 @@
 .hide{
 	display: none;
 }
+.indicator-group {
+	position: absolute;
+	bottom: 1rem;
+	display: flex;
+
+}
+.indicator-group > button {
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    background: #FFFFFF;
+    padding: 6px;
+    margin: 0.3rem;	
+}
+.indicator-group > .active {
+	background: #3b3a39;
+}
